@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('candidatos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nome');
+            $table->string('email')->unique();
+            $table->string('telefone');
+            $table->foreignId('cargo_id')->constrained('cargos');
+            $table->date('data_teste_aptidao');
+            $table->enum('status', ['pendente', 'confirmado', 'cancelado'])->default('pendente') 
         });
     }
 

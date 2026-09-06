@@ -12,9 +12,9 @@ class CargoSeeder extends Seeder
      */
     public function run(): void
     {
-        Cargo::create(['titulo' => 'Piloto de Nave', 'ativo' => true]);
-        Cargo::create(['titulo' => 'Engenheiro de Sistemas Espaciais', 'ativo' => true]);
-        Cargo::create(['titulo' => 'Médico a Bordo', 'ativo' => true]);
-        Cargo::create(['titulo' => 'Especialista em Robótica', 'ativo' => true]);
+        Cargo::create(['cargo' => 'Piloto de Nave', 'ativo' => true]);
+        Cargo::create(['cargo' => 'Engenheiro de Sistemas Espaciais', 'ativo' => true]);
+        Cargo::create(['cargo' => 'Médico a Bordo', 'ativo' => true]);
+        Cargo::create(['cargo' => 'Especialista em Robótica', 'ativo' => true]);
     }
 }
