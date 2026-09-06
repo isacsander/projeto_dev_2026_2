@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CandidatoController;
 
 Route::get('/', [CandidatoController::class, 'create'])->name('candidato.create');
+Route::post('/candidatos', [CandidatoController::class, 'store'])->name('candidato.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

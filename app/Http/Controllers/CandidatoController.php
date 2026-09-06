@@ -30,7 +30,18 @@ class CandidatoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dadosValidados = $request->validate([
+            'nome' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'cpf' => 'required|string|max:14|unique:candidatos',
+            'telefone' => 'required|string|max:20',
+            'cargo_id' => 'required|exists:cargos,id',
+            'data_teste_aptidao' => 'required|date',
+        ]);
+
+        Candidato::create($dadosValidados);
+        return back()->with('sucesso', 'Inscrição realizada com sucesso! Prepare-se para o lançamento.');
+
     }
 
     /**

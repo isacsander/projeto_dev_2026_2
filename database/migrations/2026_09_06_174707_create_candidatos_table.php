@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('nome');
             $table->string('email')->unique();
+            $table->string('cpf')->unique();
             $table->string('telefone');
             $table->foreignId('cargo_id')->constrained('cargos');
             $table->date('data_teste_aptidao');

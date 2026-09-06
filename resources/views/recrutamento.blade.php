@@ -13,6 +13,11 @@
             <h1 class="text-4xl font-bold text-blue-400 mb-2">Projeto Missão Espacial</h1>
             <p class="text-gray-300">Voluntarie-se para a maior jornada da humanidade.</p>
         </div>
+        @if(session('sucesso'))
+            <div class="mb-4 bg-green-500/20 border border-green-500 text-green-400 p-4 rounded-md text-center font-bold">
+                {{ session('sucesso') }}
+            </div>
+        @endif
 
         <form action="/candidatos" method="POST" class="space-y-4">
             @csrf
