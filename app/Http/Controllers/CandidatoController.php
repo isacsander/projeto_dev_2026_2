@@ -22,7 +22,7 @@ class CandidatoController extends Controller
     public function create()
     {
         $cargos = Cargo::where('ativo', true)->get();
-        return view('welcome', compact('cargos'));
+        return view('recrutamento', compact('cargos'));
     }
 
     /**
