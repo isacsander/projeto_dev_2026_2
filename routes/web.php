@@ -2,10 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CandidatoController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CandidatoController::class, 'create'])->name('candidato.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

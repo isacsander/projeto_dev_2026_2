@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('telefone');
             $table->foreignId('cargo_id')->constrained('cargos');
             $table->date('data_teste_aptidao');
-            $table->enum('status', ['pendente', 'confirmado', 'cancelado'])->default('pendente') 
+            $table->enum('status', ['pendente', 'confirmado', 'cancelado'])->default('pendente');
         });
     }
 

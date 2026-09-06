@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidato;
+use App\Models\Cargo;
 use Illuminate\Http\Request;
 
 class CandidatoController extends Controller
@@ -20,7 +21,8 @@ class CandidatoController extends Controller
      */
     public function create()
     {
-        //
+        $cargos = Cargo::where('ativo', true)->get();
+        return view('welcome', compact('cargos'));
     }
 
     /**
