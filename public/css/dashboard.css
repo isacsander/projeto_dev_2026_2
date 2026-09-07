@@ -82,7 +82,7 @@ th {
 }
 
 tr:hover {
-    background-color: rgba(51, 65, 85, 0.5); /* Efeito ao passar o mouse */
+    background-color: rgba(51, 65, 85, 0.5);
 }
 
 .recruta-nome {

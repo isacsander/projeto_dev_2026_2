@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Candidato;
 use App\Models\Cargo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CandidatoAprovado;
 
 class CandidatoController extends Controller
 {
@@ -99,6 +101,11 @@ class CandidatoController extends Controller
         ]);
 
         $candidato->update(['status' => $request->status]);
+        
+        if ($request->status == 'confirmado') {
+            Mail::to($candidato->email)->send(new CandidatoAprovado($candidato));
+        }
+
         return back()->with('sucesso', 'Status do recruta atualizado com sucesso!');
     }
 }

@@ -9,7 +9,6 @@
 <body>
     <nav class="navbar">
         <div style="display: flex; align-items: center; gap: 30px;">
-            <h2>Centro de Comando</h2>
             <a href="{{ route('dashboard') }}" style="color: #60a5fa; text-decoration: none; font-weight: bold;">Recrutas</a>
             <a href="{{ route('cargos.index') }}" style="color: #cbd5e1; text-decoration: none; transition: 0.3s;">Gerenciar Vagas</a>
         </div>
