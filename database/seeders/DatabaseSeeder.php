@@ -15,13 +15,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        
+        User::factory()->create([
+            'name' => 'Comandante Admin',
+            'email' => 'admin@missao.com',
+            'password' => bcrypt('senha123'),
+        ]);
         $this->call([
             CargoSeeder::class,
         ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }

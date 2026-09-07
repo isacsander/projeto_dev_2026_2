@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Cargo;
 class CargoController extends Controller
 {
     /**
@@ -11,7 +11,8 @@ class CargoController extends Controller
      */
     public function index()
     {
-        //
+        $cargos = Cargo::all();
+        return view('cargos', compact('cargos'));
     }
 
     /**
@@ -27,8 +28,18 @@ class CargoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cargo' => 'required|string|max:255|unique:cargos,cargo',
+        ]);
+
+        Cargo::create([
+            'cargo' => $request->cargo,
+            'ativo' => true 
+        ]);
+
+        return back()->with('sucesso', 'Nova vaga espacial adicionada ao sistema!');
     }
+    
 
     /**
      * Display the specified resource.
@@ -61,4 +72,15 @@ class CargoController extends Controller
     {
         //
     }
+
+    public function toggle(Cargo $cargo)
+    {
+        $cargo->update(['ativo' => !$cargo->ativo]);
+        
+        $mensagem = $cargo->ativo ? 'Vaga ativada com sucesso!' : 'Vaga desativada (foi removida do formulário público).';
+        return back()->with('sucesso', $mensagem);
+    }
+
 }
+
+

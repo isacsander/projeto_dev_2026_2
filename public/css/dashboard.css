@@ -1,0 +1,177 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0f172a; /* Fundo escuro */
+    color: #f8fafc;
+}
+
+.navbar {
+    background-color: #1e293b;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+}
+
+.navbar h2 {
+    color: #60a5fa; /* Azul claro */
+    font-size: 20px;
+}
+
+.btn-sair {
+    background-color: transparent;
+    color: #cbd5e1;
+    border: 1px solid #cbd5e1;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-sair:hover {
+    background-color: #334155;
+    color: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.alerta-sucesso {
+    background-color: rgba(34, 197, 94, 0.2);
+    border: 1px solid #22c55e;
+    color: #4ade80;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+th {
+    color: #94a3b8;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: rgba(51, 65, 85, 0.5); /* Efeito ao passar o mouse */
+}
+
+.recruta-nome {
+    font-weight: bold;
+    color: #f8fafc;
+    margin-bottom: 4px;
+}
+
+.recruta-detalhe {
+    font-size: 12px;
+    color: #94a3b8;
+    margin: 2px 0;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.badge-pendente { background-color: #fef08a; color: #854d0e; }
+.badge-confirmado { background-color: #bbf7d0; color: #166534; }
+.badge-cancelado { background-color: #fecaca; color: #991b1b; }
+
+.acoes {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 12px;
+}
+.btn-aprovar { background-color: #2563eb; }
+.btn-aprovar:hover { background-color: #1d4ed8; }
+.btn-reprovar { background-color: #ef4444; }
+.btn-reprovar:hover { background-color: #dc2626; }
+
+.analisado {
+    font-size: 12px;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.card-filtro {
+    margin-bottom: 20px;
+}
+
+.form-filtro {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.input-filtro {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #475569;
+    background-color: #0f172a;
+    color: white;
+}
+
+.input-filtro:focus {
+    outline: none;
+    border-color: #3b82f6;
+}
+
+.input-busca {
+    flex: 2;
+}
+
+.select-status {
+    flex: 1;
+}
+
+.link-limpar {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.link-limpar:hover {
+    color: #ffffff;
+}

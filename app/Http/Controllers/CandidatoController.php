@@ -11,9 +11,26 @@ class CandidatoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $query = Candidato::with('cargo')->orderBy('created_at', 'desc');
+        
+        if ($request->filled('busca')) {
+            $query->where(function($q) use ($request) {
+                $q->where('nome', 'like', '%' . $request->busca . '%')
+                  ->orWhere('email', 'like', '%' . $request->busca . '%');
+            });
+        }
+
+        if ($request->filled('status')) {
+            $query->where('status', $request->status);
+        }
+        
+        $candidatos = $query->paginate(10);
+        
+        return view('dashboard', compact('candidatos'));
+        
+        
     }
 
     /**
@@ -74,5 +91,14 @@ class CandidatoController extends Controller
     public function destroy(Candidato $candidato)
     {
         //
+    }
+
+    public function updateStatus(Request $request, Candidato $candidato){
+        $request->validate([
+            'status' => 'required|in:confirmado,cancelado'
+        ]);
+
+        $candidato->update(['status' => $request->status]);
+        return back()->with('sucesso', 'Status do recruta atualizado com sucesso!');
     }
 }
